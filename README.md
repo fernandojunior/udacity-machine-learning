@@ -2,7 +2,7 @@
 Completed projects for Udacity's Machine Learning Nanodegree curriculum.
 
   - [x] [Titanic Survival Exploration](projects/titanic_survival_exploration/Titanic_Survival_Exploration.ipynb)
-  - [ ] Predicting Boston Housing Prices
+  - [x] [Predicting Boston Housing Prices](projects/boston_housing/boston_housing.ipynb)
   - [ ] Building a Student Intervention System
   - [ ] Creating Customer Segments
   - [ ] Train a Smartcab How to Drive
