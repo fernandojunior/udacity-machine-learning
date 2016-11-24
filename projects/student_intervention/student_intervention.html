@@ -11800,7 +11800,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -11855,10 +11855,13 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+
+<span class="c1"># TODO: Calculate number of students</span>
 <span class="n">n_students</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># TODO: Calculate number of features</span>
@@ -11879,6 +11882,10 @@ div#notebook {
 <span class="k">print</span> <span class="s2">&quot;Number of students who passed: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_passed</span><span class="p">)</span>
 <span class="k">print</span> <span class="s2">&quot;Number of students who failed: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_failed</span><span class="p">)</span>
 <span class="k">print</span> <span class="s2">&quot;Graduation rate of the class: {:.2f}%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">grad_rate</span><span class="p">)</span>
+
+<span class="c1"># EXTRA: simple exploratory analysis</span>
+<span class="k">print</span> <span class="s2">&quot;Plot for the counts of students who passed or not by sex:&quot;</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">factorplot</span><span class="p">(</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">student_data</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;passed&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -11896,8 +11903,140 @@ Number of features: 30
 Number of students who passed: 265
 Number of students who failed: 130
 Graduation rate of the class: 67.09%
+Plot for the counts of students who passed or not by sex:
 </pre>
 </div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+KQIAMISCBQBDKFgAMISCBQBDKFgAMISCBQBDKFgAMISCBQBDeJILljl16pRefPFFSdL58+eVnZ2t
+1NRUvfTSSzp37pxaWlo0e/ZsjRo1SllZWcrPz9eIESO0du1atba2at68eRb/BMCl8SQXLLNp0yYd
+O3ZMhYWFamtr0/bt2/Xxxx9r6tSpGjVqlOrq6pSVlaU9e/aourpa8+fP129+8xvl5eWppKREDofD
+6h8BuCQKFpY5cuSIpk+frhEjRmjs2LG69957NXLkyE4fneJyubR161bFx8dr/fr12rRpk4qKijRk
+yBALkwO+YYoAlhk4cKB2796tgwcPqry8XJs3b1ZoaKjWrl2r6Ojoi97vcrkUFRWlEydOULDoFbjI
+Bcu8//77+vzzz5WamqrCwkKdOHFCw4YN0+7duyVJbrdby5YtkyQdOHBAR44cUXFxsVauXKmGhgYr
+owM+YYoAljl8+LAKCwu9c6n333+/xo4dq0WLFun8+fNqb2/XjBkzNHr0aD366KN68803NWDAAO3Y
+sUMff/yx1qxZY/FPAFwaBQsAhjBFAACGULAAYAgFCwCGULAAYAgFCwCGULAAYAgFCwCGULAAYMj/
+Ah88szNC/klNAAAAAElFTkSuQmCC
+"
+>
+</div>
+
 </div>
 
 </div>
@@ -11918,7 +12057,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -12000,7 +12139,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -12071,7 +12210,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -12089,12 +12228,17 @@ Feature values:
     <span class="n">y_all</span><span class="p">,</span>
     <span class="n">train_size</span><span class="o">=</span><span class="n">num_train</span><span class="p">,</span>
     <span class="n">test_size</span><span class="o">=</span><span class="n">num_test</span><span class="p">,</span>
-    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="c1">#stratify=y_all  #  EXTRA: preserve class imbalance</span>
 <span class="p">)</span>
 
 <span class="c1"># Show the results of the split</span>
 <span class="k">print</span> <span class="s2">&quot;Training set has {} samples.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="k">print</span> <span class="s2">&quot;Testing set has {} samples.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># EXTRA: Show if the graduation rate is preserved across both sets</span>
+<span class="k">print</span> <span class="s2">&quot;Graduation rate for training set = {:.2f}%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">y_train</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="k">print</span> <span class="s2">&quot;Graduation rate for testing set = {:.2f}%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">y_test</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </pre></div>
 
 </div>
@@ -12109,6 +12253,8 @@ Feature values:
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training set has 300 samples.
 Testing set has 95 samples.
+Graduation rate for training set = 68.33%
+Graduation rate for testing set = 63.16%
 </pre>
 </div>
 </div>
@@ -12160,38 +12306,56 @@ Testing set has 95 samples.
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <p><strong>Logistic regression</strong></p>
-<ol>
-<li><p>The logistic regression model has been extensively used in numerous disciplines, including Web, medical, social science and educational fields (<a href="http://charuaggarwal.net/classbook.pdf">Aggarwal, 2015</a>; <a href="http://www-psychology.concordia.ca/fac/kline/734/peng.pdf">Peng et al., 2002</a>, <a href="http://synapse.koreamed.org/Synapse/Data/PDFData/0006JKAN/jkan-43-154.pdf">Park, 2013</a>). In  <a href="http://journals.sfu.ca/cjhe/index.php/cjhe/article/viewFile/183161/183136">Pyke &amp; Sherindan, (1993)</a>, logistic regression was used to predict the retention of 477 master's and 124 doctoral candidates at a large Canadian university.</p>
-</li>
-<li><p>Some advantages of the model are: parsimonious; robust; flexible; easily used; lends itself to a meaningful interpretation; no assumptions are made regarding the distribution of the independent variables (<a href="http://www.stat-d.si/mz/mz1.1/pohar.pdf">Pohar et al., 2004</a>).</p>
-</li>
-<li><p>However, to perform well, some assumptions must be considered: cannot predict continuous outcomes; the model should be fitted correctly, i.e., only the meaningful variables should be included; requires each observation to be independent; the model should have little or no multicollinearity; it requires quite large sample sizes (<a href="https://www.statisticssolutions.com/assumptions-of-logistic-regression/">Reference</a>).</p>
-</li>
-<li><p>Generally, logistic regression is well suited for describing and testing hypotheses about relationships between an (binary or multnominal) outcome (dependent or response) variable and one or more categorical or continuous independent (predictor or explanatory) variables (<a href="http://www-psychology.concordia.ca/fac/kline/734/peng.pdf">Peng et al., 2002</a>, <a href="http://www.stat-d.si/mz/mz1.1/pohar.pdf">Pohar et al., 2004</a>). For binary outcome, logistic regression is one of the most widely used classification methods (<a href="https://www.emis.de/journals/RCE/V35/v35n2a03.pdf">Salazar et al., 2012</a>).</p>
-</li>
-</ol>
+<p>GENERAL APPLICATIONS</p>
+<ul>
+<li>The logistic regression model has been extensively used in numerous disciplines, including Web, medical, social science and educational fields (<a href="http://charuaggarwal.net/classbook.pdf">Aggarwal, 2015</a>; <a href="http://www-psychology.concordia.ca/fac/kline/734/peng.pdf">Peng et al., 2002</a>, <a href="http://synapse.koreamed.org/Synapse/Data/PDFData/0006JKAN/jkan-43-154.pdf">Park, 2013</a>). In  <a href="http://journals.sfu.ca/cjhe/index.php/cjhe/article/viewFile/183161/183136">Pyke &amp; Sherindan, (1993)</a>, logistic regression was used to predict the retention of 477 master's and 124 doctoral candidates at a large Canadian university.</li>
+</ul>
+<p>STRENGTHS</p>
+<ul>
+<li>Logistc regression models are parsimonious; robust; flexible; easily used; lend itself to a meaningful interpretation; no assumptions are made regarding the distribution of the independent variables (<a href="http://www.stat-d.si/mz/mz1.1/pohar.pdf">Pohar et al., 2004</a>).</li>
+</ul>
+<p>WEAKNESSES</p>
+<ul>
+<li>To perform well, some assumptions must be considered: cannot predict continuous outcomes; should be fitted correctly, i.e., only the meaningful variables should be included; requires each observation to be independent; the model should have little or no multicollinearity; it requires quite large sample sizes (<a href="https://www.statisticssolutions.com/assumptions-of-logistic-regression/">Reference</a>).</li>
+</ul>
+<p>REASONS FOR CHOOSING</p>
+<ul>
+<li>The data have a binary outcome variable and more than one categorical and discrate independent (predictor or explanatory) variables (<a href="http://www-psychology.concordia.ca/fac/kline/734/peng.pdf">Peng et al., 2002</a>, <a href="http://www.stat-d.si/mz/mz1.1/pohar.pdf">Pohar et al., 2004</a>); For binary outcome, logistic regression is one of the most widely used classification methods (<a href="https://www.emis.de/journals/RCE/V35/v35n2a03.pdf">Salazar et al., 2012</a>).</li>
+</ul>
 <p><strong> Support Vector Machine </strong></p>
-<ol>
-<li><p>In <a href="http://psrcentre.org/images/extraimages/84.%201211402.pdf">Ghumbre et al. (2011)</a>, a decision support system based on support vector machine along with a radial basis function network is projected for the diagnosis of heart disease. The diagnosis is carried out utilizing different data samples from India based patients.</p>
-</li>
-<li><p>SVM models are based on kernel trick, so they can: use different kernel functions, have good generalization performance even in problems in high dimensions or that are not linearly separable; have a regularisation parameter which reduces overfitting; are defined by a convex optimisation problem, i.e., have absence of local minima (<a href="http://scikit-learn.org/stable/modules/svm.html">scikit-learn.org</a>, <a href="http://stats.stackexchange.com/questions/24437/advantages-and-disadvantages-of-svm">stackexchange.com</a>, <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/SVM">nickgillian.com</a>).</p>
-</li>
-<li><p>However, the models can be quite sensitive to overfitting due the choice of a kernel function and determination of its parameters; have limitation in speed and size: high complexity and memory requirements for quadratic programming in large-scale tasks; optimal design for multiclass SVM classifiers is a further area for research (<a href="http://stats.stackexchange.com/questions/24437/advantages-and-disadvantages-of-svm">stackexchange.com</a>, <a href="http://www.svms.org/disadvantages.html">svms.org</a>).</p>
-</li>
-<li><p>SVM is fundamentally a binary classifier and has become an important alternative for shuch problems (<a href="https://www.emis.de/journals/RCE/V35/v35n2a03.pdf">Salazar et al.</a>). Its goal is to find the optimal hyperplane (linear or nonlinear) that maximizes the gap or margin between the classes (<a href="http://www.dataminingbook.info/pmwiki.php/Main/BookDownload">Zaki et al.</a>).</p>
-</li>
-</ol>
+<p>GENERAL APPLICATIONS</p>
+<ul>
+<li>In <a href="http://psrcentre.org/images/extraimages/84.%201211402.pdf">Ghumbre et al. (2011)</a>, a decision support system based on support vector machine along with a radial basis function network is projected for the diagnosis of heart disease. The diagnosis is carried out utilizing different data samples from India based patients.</li>
+</ul>
+<p>STRENGTHS</p>
+<ul>
+<li>SVM models are based on kernel trick, so they can: use different kernel functions, have good generalization performance even in problems in high dimensions or that are not linearly separable; have a regularisation parameter which reduces overfitting; are defined by a convex optimisation problem, i.e., have absence of local minima (<a href="http://scikit-learn.org/stable/modules/svm.html">scikit-learn.org</a>, <a href="http://stats.stackexchange.com/questions/24437/advantages-and-disadvantages-of-svm">stackexchange.com</a>, <a href="http://www.nickgillian.com/wiki/pmwiki.php/GRT/SVM">nickgillian.com</a>).</li>
+</ul>
+<p>WEAKNESSES</p>
+<ul>
+<li>However, the models can be quite sensitive to overfitting due the choice of a kernel function and determination of its parameters; have limitation in speed and size: high complexity and memory requirements for quadratic programming in large-scale tasks; optimal design for multiclass SVM classifiers is a further area for research (<a href="http://stats.stackexchange.com/questions/24437/advantages-and-disadvantages-of-svm">stackexchange.com</a>, <a href="http://www.svms.org/disadvantages.html">svms.org</a>).</li>
+</ul>
+<p>REASONS FOR CHOOSING</p>
+<ul>
+<li>SVM is fundamentally a binary classifier which suit data well and has become an important alternative for logistc regression (<a href="https://www.emis.de/journals/RCE/V35/v35n2a03.pdf">Salazar et al.</a>).</li>
+</ul>
 <p><strong> Decision Tree </strong></p>
-<ol>
-<li><p>In <a href="https://people.eecs.berkeley.edu/~brewer/papers/icac2004_chen_diagnosis.pdf">Chen et al. (2004)</a>, decision tree techniques were used to automatically identify the causes of failures in eBay platform from large amount of information of user requests.</p>
-</li>
-<li><p>Decision trees implicitly perform feature selection; require little data preparation (deal with scale, outlier analysis, missing values); nonlinear relationships between parameters do not affect tree performance; easy to interpret and explain (<a href="http://www.simafore.com/blog/bid/62333/4-key-advantages-of-using-decision-trees-for-predictive-analytics">simafore.com</a>).</p>
-</li>
-<li><p>Decision-tree learners can create over-complex trees that do not generalise the data well (overfitting); can be unstable because small variations in the data might result in a completely different tree being generated; the problem of learning an optimal decision tree is known to be NP-complete under several aspects of optimality. (<a href="http://scikit-learn.org/stable/modules/tree.html">scikit-learn.org</a>).</p>
-</li>
-<li><p>Decision trees try recursively split the the training data into subspaces according to a certain discrete function of the input variables so as to maximize the discrimination among the different classes (<a href="http://charuaggarwal.net/classbook.pdf">Aggarwal, 2015</a>). In most of the cases, the discrete splitting functions are univariate. The binary criteria are used for creating binary decision trees which are based on division of the input variable domain into two sub-domains. So, when a branch reach the end each leaf is assigned to one of two classes representing the most appropriate target value (<a href="http://www.ise.bgu.ac.il/faculty/liorr/hbchap9.pdf">Rokach &amp; Maimon</a>).</p>
-</li>
-</ol>
+<p>GENERAL APPLICATIONS</p>
+<ul>
+<li>In <a href="https://people.eecs.berkeley.edu/~brewer/papers/icac2004_chen_diagnosis.pdf">Chen et al. (2004)</a>, decision tree techniques were used to automatically identify the causes of failures in eBay platform from large amount of information of user requests.</li>
+</ul>
+<p>STRENGTHS</p>
+<ul>
+<li>Decision trees implicitly perform feature selection; require little data preparation (deal with scale, outlier analysis, missing values); nonlinear relationships between parameters do not affect tree performance; easy to interpret and explain (<a href="http://www.simafore.com/blog/bid/62333/4-key-advantages-of-using-decision-trees-for-predictive-analytics">simafore.com</a>).</li>
+</ul>
+<p>WEAKNESSES</p>
+<ul>
+<li>Decision-tree learners can create over-complex trees that do not generalise the data well (overfitting); can be unstable because small variations in the data might result in a completely different tree being generated; the problem of learning an optimal decision tree is known to be NP-complete under several aspects of optimality. (<a href="http://scikit-learn.org/stable/modules/tree.html">scikit-learn.org</a>).</li>
+</ul>
+<p>REASONS FOR CHOOSING</p>
+<ul>
+<li>Decision trees can be applied to situations where there's not just one underlying decision boundary (different from logistic regression models) (<a href="https://www.quora.com/What-are-the-advantages-of-logistic-regression-over-decision-trees">quora.com</a>), which is the case of the studant data with many input variables.</li>
+</ul>
 
 </div>
 </div>
@@ -12216,7 +12380,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -12289,7 +12453,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -12307,6 +12471,7 @@ Testing set has 95 samples.
 <span class="n">y_train_100</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
 
 <span class="n">X_train_200</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[:</span><span class="mi">200</span><span class="p">]</span>
+
 <span class="n">y_train_200</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[:</span><span class="mi">200</span><span class="p">]</span>
 
 <span class="n">X_train_300</span> <span class="o">=</span> <span class="n">X_train</span>
@@ -12332,6 +12497,13 @@ Testing set has 95 samples.
 <span class="n">train_predict</span><span class="p">(</span><span class="n">clf_C</span><span class="p">,</span> <span class="n">X_train_200</span><span class="p">,</span> <span class="n">y_train_200</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">train_predict</span><span class="p">(</span><span class="n">clf_C</span><span class="p">,</span> <span class="n">X_train_300</span><span class="p">,</span> <span class="n">y_train_300</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+<span class="c1"># Extra: Simplification:</span>
+<span class="c1">#for clf in [clf_A, clf_B, clf_C]:</span>
+<span class="c1">#    print(&quot;\n[{}]\n&quot;.format(clf.__class__.__name__))</span>
+<span class="c1">#    for n in [100, 200, 300]:</span>
+<span class="c1">#        train_predict(clf, X_train[:n], y_train[:n], X_test, y_test)</span>
+<span class="c1">#        print(&quot;\n&quot;)</span>
 </pre></div>
 
 </div>
@@ -12347,57 +12519,57 @@ Testing set has 95 samples.
 <pre>[Logistic Regression Classifier]
 
 Training a LogisticRegression using a training set size of 100. . .
-Trained model in 0.0018 seconds
-Made predictions in 0.0002 seconds.
+Trained model in 0.0028 seconds
+Made predictions in 0.0004 seconds.
 F1 score for training set: 0.8593.
-Made predictions in 0.0002 seconds.
+Made predictions in 0.0004 seconds.
 F1 score for test set: 0.7647.
 
 
 Training a LogisticRegression using a training set size of 200. . .
-Trained model in 0.0024 seconds
+Trained model in 0.0045 seconds
 Made predictions in 0.0005 seconds.
 F1 score for training set: 0.8562.
-Made predictions in 0.0003 seconds.
+Made predictions in 0.0004 seconds.
 F1 score for test set: 0.7914.
 
 
 Training a LogisticRegression using a training set size of 300. . .
-Trained model in 0.0048 seconds
-Made predictions in 0.0004 seconds.
+Trained model in 0.0067 seconds
+Made predictions in 0.0013 seconds.
 F1 score for training set: 0.8468.
-Made predictions in 0.0003 seconds.
+Made predictions in 0.0005 seconds.
 F1 score for test set: 0.8060.
 
 [SVM Classifier]
 
 Training a SVC using a training set size of 100. . .
-Trained model in 0.0022 seconds
-Made predictions in 0.0017 seconds.
+Trained model in 0.0031 seconds
+Made predictions in 0.0022 seconds.
 F1 score for training set: 0.8777.
-Made predictions in 0.0015 seconds.
+Made predictions in 0.0021 seconds.
 F1 score for test set: 0.7746.
 
 
 Training a SVC using a training set size of 200. . .
-Trained model in 0.0057 seconds
-Made predictions in 0.0047 seconds.
+Trained model in 0.0080 seconds
+Made predictions in 0.0066 seconds.
 F1 score for training set: 0.8679.
-Made predictions in 0.0025 seconds.
+Made predictions in 0.0034 seconds.
 F1 score for test set: 0.7815.
 
 
 Training a SVC using a training set size of 300. . .
-Trained model in 0.0122 seconds
-Made predictions in 0.0102 seconds.
+Trained model in 0.0174 seconds
+Made predictions in 0.0141 seconds.
 F1 score for training set: 0.8761.
-Made predictions in 0.0034 seconds.
+Made predictions in 0.0047 seconds.
 F1 score for test set: 0.7838.
 
 [Decision Tree Classification]
 
 Training a DecisionTreeClassifier using a training set size of 100. . .
-Trained model in 0.0016 seconds
+Trained model in 0.0021 seconds
 Made predictions in 0.0003 seconds.
 F1 score for training set: 1.0000.
 Made predictions in 0.0003 seconds.
@@ -12405,18 +12577,18 @@ F1 score for test set: 0.6126.
 
 
 Training a DecisionTreeClassifier using a training set size of 200. . .
-Trained model in 0.0023 seconds
-Made predictions in 0.0003 seconds.
+Trained model in 0.0033 seconds
+Made predictions in 0.0004 seconds.
 F1 score for training set: 1.0000.
-Made predictions in 0.0002 seconds.
+Made predictions in 0.0003 seconds.
 F1 score for test set: 0.7287.
 
 
 Training a DecisionTreeClassifier using a training set size of 300. . .
-Trained model in 0.0033 seconds
-Made predictions in 0.0003 seconds.
+Trained model in 0.0047 seconds
+Made predictions in 0.0004 seconds.
 F1 score for training set: 1.0000.
-Made predictions in 0.0002 seconds.
+Made predictions in 0.0003 seconds.
 F1 score for test set: 0.6167.
 </pre>
 </div>
@@ -12454,22 +12626,22 @@ F1 score for test set: 0.6167.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0018s</td>
-<td style="text-align:center">0.0002s</td>
+<td style="text-align:center">0.0028s</td>
+<td style="text-align:center">0.0004s</td>
 <td style="text-align:center">0.8593</td>
 <td style="text-align:center">0.7647</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.0024s</td>
-<td style="text-align:center">0.0003s</td>
+<td style="text-align:center">0.0045s</td>
+<td style="text-align:center">0.0004s</td>
 <td style="text-align:center">0.8562</td>
 <td style="text-align:center">0.7914</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.0048s</td>
-<td style="text-align:center">0.0003s</td>
+<td style="text-align:center">0.0067s</td>
+<td style="text-align:center">0.0005s</td>
 <td style="text-align:center">0.8468</td>
 <td style="text-align:center">0.8060</td>
 </tr>
@@ -12488,22 +12660,22 @@ F1 score for test set: 0.6167.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0022s</td>
-<td style="text-align:center">0.0015s</td>
+<td style="text-align:center">0.0031s</td>
+<td style="text-align:center">0.0021s</td>
 <td style="text-align:center">0.8777</td>
 <td style="text-align:center">0.7746</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.0057s</td>
-<td style="text-align:center">0.0025s</td>
+<td style="text-align:center">0.0080s</td>
+<td style="text-align:center">0.0034s</td>
 <td style="text-align:center">0.8679</td>
 <td style="text-align:center">0.7815</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.0122s</td>
-<td style="text-align:center">0.0034s</td>
+<td style="text-align:center">0.0174s</td>
+<td style="text-align:center">0.0047s</td>
 <td style="text-align:center">0.8761</td>
 <td style="text-align:center">0.7838</td>
 </tr>
@@ -12522,22 +12694,22 @@ F1 score for test set: 0.6167.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0016s</td>
+<td style="text-align:center">0.0021s</td>
 <td style="text-align:center">0.0003s</td>
 <td style="text-align:center">1.0000</td>
 <td style="text-align:center">0.6126</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.0023s</td>
-<td style="text-align:center">0.0002s</td>
+<td style="text-align:center">0.0033s</td>
+<td style="text-align:center">0.0003s</td>
 <td style="text-align:center">1.0000</td>
 <td style="text-align:center">0.7287</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.0033s</td>
-<td style="text-align:center">0.0002s</td>
+<td style="text-align:center">0.0047s</td>
+<td style="text-align:center">0.0003s</td>
 <td style="text-align:center">1.0000</td>
 <td style="text-align:center">0.6167</td>
 </tr>
@@ -12593,7 +12765,7 @@ F1 score for test set: 0.6167.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Consider the available studant data set, where the response variable <em>passed</em> falls into one of two classes, Yes or No. Rather than modeling the response directly, logistic regression models the probability that a studant belongs to a particular category. The logistic regression is based on a sigmoid curve (logistic function) which is composed of a vector of weights (also called as parameters or coeficients) to be estimated for the features. So when we need to predict a response for a student we calculate the dot product between its features and the estimed weight vector, then feed the result into the sigmoid to transform the probability into confidence score we can use to understand whether student passed or not.</p>
+<p>Consider the available studant data set, where we need to predict if a studend will pass or not. Rather than predict the response directly, logistic regression models the probability that a studant belongs to a particular class (yes or not). For this, logistic regression takes features (e.g., age, sex, etc.) about previous students and creates a function (called "sigmoid") which assigns a weight for each feature. So when we need to predict a response for a student we summed up the product between the features and its weights and apply this value to the sigmoid function to transform in a probability we can use to understand whether student passed or not.</p>
 
 </div>
 </div>
@@ -12624,13 +12796,19 @@ F1 score for test set: 0.6167.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;GridSearchCV&#39; and &#39;make_scorer&#39;</span>
 <span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">f1_score</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="c1"># Extra: Normalize</span>
+<span class="c1">#from sklearn.preprocessing import Normalizer</span>
+<span class="c1">#normer = Normalizer()</span>
+<span class="c1">#X_train = normer.fit_transform(X_train)</span>
+<span class="c1">#X_test = normer.transform(X_test)</span>
 
 <span class="c1"># TODO: Create the parameters list you wish to tune</span>
 <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="s1">&#39;penalty&#39;</span><span class="p">:[</span><span class="s1">&#39;l1&#39;</span><span class="p">,</span><span class="s1">&#39;l2&#39;</span><span class="p">]}</span>
@@ -12651,7 +12829,7 @@ F1 score for test set: 0.6167.
 <span class="n">clf</span> <span class="o">=</span> <span class="n">grid_obj</span><span class="o">.</span><span class="n">best_estimator_</span>
 
 <span class="c1"># Report the final F1 score for training and testing after parameter tuning</span>
-<span class="k">print</span> <span class="s2">&quot;Parameters: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">grid_obj</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Parameters: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">clf</span><span class="p">)</span>
 <span class="k">print</span> <span class="s2">&quot;Tuned model has a training F1 score of {:.4f}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predict_labels</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
 <span class="k">print</span> <span class="s2">&quot;Tuned model has a testing F1 score of {:.4f}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predict_labels</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
 </pre></div>
@@ -12666,10 +12844,13 @@ F1 score for test set: 0.6167.
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Parameters: {&#39;penalty&#39;: &#39;l1&#39;, &#39;C&#39;: 0.1}
+<pre>Parameters: LogisticRegression(C=0.1, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class=&#39;ovr&#39;, n_jobs=1,
+          penalty=&#39;l1&#39;, random_state=77, solver=&#39;liblinear&#39;, tol=0.0001,
+          verbose=0, warm_start=False)
 Made predictions in 0.0003 seconds.
 Tuned model has a training F1 score of 0.8323.
-Made predictions in 0.0002 seconds.
+Made predictions in 0.0003 seconds.
 Tuned model has a testing F1 score of 0.7891.
 </pre>
 </div>
@@ -12694,7 +12875,7 @@ Tuned model has a testing F1 score of 0.7891.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The final model's F1 score for training and testing are 0.8323 and 0.7891, respectively. The final model is not good enough compared with the untuned model and decreases the performance by less than 2%.</p>
+<p><strong>Answer: </strong> The final model's F1 score for training and testing are 0.8323 and 0.7891, respectively. The final model is not good enough compared with the untuned model and decreases the performance by less than 2%. However, we could perform extra steps such as preserve class balance and feature scaling (normalization) to get better answer.</p>
 
 </div>
 </div>
